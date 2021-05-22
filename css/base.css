@@ -1,0 +1,204 @@
+/*清除元素默认的内外边距  */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, button, input, fieldset, legend, input, textarea, p, blockquote, th, td, article, aside, details, figcaption, figure, #footer, #header, hgroup, menu, nav, section {
+
+    /*padding: 0;*/
+    /*margin: 0;*/
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+}
+
+* {
+
+     cursor: url(../images/箭头.png), default!important;
+ }
+/*让所有斜体 不倾斜*/
+
+
+
+em,
+i {
+    font-style: normal;
+}
+/*去掉列表前面的小点*/
+li {
+    list-style: none;
+}
+/*图片没有边框   去掉图片底侧的空白缝隙*/
+img {
+    border: 0;  /*ie6*/
+    vertical-align: middle;
+}
+/*让button 按钮 变成小手*/
+button {
+    cursor: pointer;
+}
+/*取消链接的下划线*/
+a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+
+
+}
+
+a:hover {
+    /*color: #e33333;*/
+    /*font-weight: bold;*/
+    text-decoration: none;
+    /*-webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);*/
+    /*-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);*/
+    /*transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);*/
+    /*opacity: 1;*/
+    /*border: 1px solid lightgrey;*/
+    /*border-right: 1px solid;*/
+    /*transform: scaleY(0.2)*/
+}
+
+body, input, button, textarea, select {
+    font-family: "YouYuan","Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+.hide,
+.none {
+    display: none;
+}
+/*清除浮动*/
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+.container {
+    max-width: 1280px;
+    /*background-color: #fff;*/
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+/*禁止文字选中*/
+.user-select {
+    -webkit-user-select: none;
+    /*文字不能被粘贴*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@media (min-width: 1366px) {
+    .container {
+        width: 1280px;
+    }
+}
+.active a
+{
+
+    color: #409EFF;
+}
+.my_btn
+{
+    /*float: left;*/
+}
+.cl
+{
+    clear: both;
+}
+.gotop {
+    position: fixed;
+    right: 45px;
+    bottom: 25px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(../images/backtop.png) no-repeat 0 0;
+    opacity: 0.5;
+}
+.gotop:hover {
+    background: url(../images/backtop.png) no-repeat 0 -52px;
+}
+.footer {
+    clear: both;
+    color: #AAA;
+    position: relative;
+    margin-left: 215px;
+    margin-right: 20px;
+    padding: 20px 0 30px 20px;
+    border-top: 2px solid #eee;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+.footer a {
+    color: #AAA;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #666;
+}
+@media (max-width: 767px) {
+    .footer {
+        margin: 0px 20px;
+    }
+}
+@media (max-width: 560px) {
+    .footer span {
+        display: block;
+    }
+}
+body
+{
+    overflow-x: hidden;
+}
+.quotes {
+    /*margin-top: 5%;*/
+    margin: 0 auto;
+    margin-bottom: 5%;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #AAA;
+}
+.quotes span, .quotes a {
+    padding: 6px 12px;
+    margin: 0 3px;
+    background: #DDD;
+    border-radius: 5px;
+}
+.quotes a {
+    color: #666;
+    text-decoration: none;
+}
+.quotes a:hover {
+    opacity: 1;
+    color: #FFFFFF;
+    background: #3399CC;
+    opacity: 0.8;
+}
+.quotes .disabled {
+    cursor: not-allowed;
+}
+.quotes .current {
+    background: #3399CC;
+    color: #FFFFCC;
+    cursor: default;
+}
