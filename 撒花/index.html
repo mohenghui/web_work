@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>撒花特效</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../lib-bs4/css/bootstrap.min.css">
+    <script src="../lib-bs4/js/jquery-3.3.1.min.js"></script>
+    <script src="../lib-bs4/js/popper.min.js"></script>
+    <script src="../lib-bs4/js/bootstrap.min.js"></script>
+    <link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="static/images/favicon.ico">
+
+
+
+<style>
+    /*https://images2015.cnblogs.com/blog/961272/201607/961272-20160719145928310-806072030.gif*/
+
+    * {
+
+        cursor: url(static/images/箭头.png), default!important;
+    }
+html,body{height: 100%;width: 100%;}
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0} 
+body{font-size:12px;font-family:'微软雅黑';background:#fff;height: 100%;width: 100%;background-color: #fff;} 
+a{color:#2d374b;text-decoration:none} 
+a:hover{color:#cd0200;text-decoration:underline} 
+em{font-style:normal} 
+li{list-style:none} 
+img{border:0;vertical-align:middle} 
+table{border-collapse:collapse;border-spacing:0} 
+p{word-wrap:break-word}
+#content { 
+	width: 100%;
+	height: 100%; 
+	top: 0px;
+	overflow: hidden; 
+	position: absolute; 
+}
+#snowflake { 
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	overflow: hidden; 
+}
+.snowRoll { 
+	position: absolute; 
+	opacity: 0; 
+	-webkit-animation-name: mysnow; 
+	-webkit-animation-duration: 20s; 
+	-moz-animation-name: mysnow; 
+	-moz-animation-duration: 20s; 
+	height: 80px; 
+}
+@-webkit-keyframes mysnow {  
+	0% {
+	 bottom: 100%;
+	}
+	 50% {
+	 -webkit-transform: rotate(1080deg);
+	}
+	 100% {
+	 -webkit-transform: rotate(0deg) translate3d(50px, 50px, 50px);
+	}
+}
+@-moz-keyframes mysnow {  
+	0% {
+	 bottom: 100%;
+	}
+	 50% {
+	 -moz-transform: rotate(1080deg);
+	}
+	 100% {
+	 -moz-transform: rotate(0deg) translate3d(50px, 50px, 50px);
+	}
+}
+
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, button, input, fieldset, legend, input, textarea, p, blockquote, th, td, article, aside, details, figcaption, figure, #footer, #header, hgroup, menu, nav, section {
+
+    /*padding: 0;*/
+    /*margin: 0;*/
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+}
+
+
+.head img
+{
+    margin-left: 0%;
+}
+.hidden-xs-nav span, .header-xs-nav span {
+    margin: 0px 10px;
+}
+.hidden-xs-nav a, .header-xs-nav a {
+    border: 1px solid rgb(52,58,64);
+    border-radius: 25px;
+    /*background-color:#transparent;*/
+}
+.hidden-xs-nav a:hover, .header-xs-nav a:hover {
+    opacity: 1;
+    color: #409EFF;
+    background-color: #ECF5FF;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    text-decoration: none;
+    /*background: transparent;*/
+    /*#f8f9fa;*/
+}
+.head
+{
+    /*position: fixed;*/
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*bottom: 200px;*/
+
+    z-index: 99999;
+    width: 100%;
+    /*background: transparent;*/
+    padding: 0;
+    /*background-color: #fff;*/
+    /*border-bottom: 1px solid #e6e6e6;*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /*background:rgba(0,0,0,0.1);*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+
+
+}
+
+a:hover {
+    /*color: #e33333;*/
+    /*font-weight: bold;*/
+    text-decoration: none;
+    /*-webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);*/
+    /*-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);*/
+    /*transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);*/
+    /*opacity: 1;*/
+    /*border: 1px solid lightgrey;*/
+    /*border-right: 1px solid;*/
+    /*transform: scaleY(0.2)*/
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class=" bg-dark head">
+
+    <nav class="container navbar navbar-expand-sm ">
+        <ul class="navbar-nav container bg-dark hidden-xs-nav">
+            <img src="static/images/logo.png" alt="" width="50px" height="50px"
+                 title="莫客博客 - POWERED BY WY ALL RIGHTS RESERVED">
+            <li class="active"><a href="../index.html"><span class="glyphicon glyphicon-home"></span>网站首页&nbsp;</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-erase"></span>网站前端&nbsp;</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-inbox"></span>后端技术&nbsp;</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-globe"></span>管理系统&nbsp;</a></li>
+            <li><a href="about.html"><span class="glyphicon glyphicon-user"></span>关于我们&nbsp;</a></li>
+            <li><a href="friendly.html"><span class="glyphicon glyphicon-tags"></span>友情链接&nbsp;</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+
+<div id='content'>
+        <!-- 飘花 -->
+        <div id="snowflake"></div>
+    </div>
+
+     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+     <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+
+     <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.transit.js"></script>
+	<script type="text/javascript">
+	$(function() {
+        var snowflakeURl = [
+            './static/images/icon_petal_1.png',
+            './static/images/icon_petal_2.png',
+            './static/images/icon_petal_3.png',
+            './static/images/icon_petal_4.png',
+            './static/images/icon_petal_5.png',
+            './static/images/icon_petal_6.png',
+            './static/images/icon_petal_7.png',
+            './static/images/icon_petal_8.png'
+        ]  
+        var container = $("#content");
+           visualWidth = container.width();
+           visualHeight = container.height();
+    　　//获取content的宽高
+        function snowflake() {
+            // 雪花容器
+            var $flakeContainer = $('#snowflake');
+    　　　　　　
+            // 随机六张图
+            function getImagesName() {
+                return snowflakeURl[[Math.floor(Math.random() * 8)]];
+            }
+            // 创建一个雪花元素
+            function createSnowBox() {
+                var url = getImagesName();
+                return $('<div class="snowbox" />').css({
+                    'width': 25,
+                    'height': 26,
+                    'position': 'absolute',
+                    'backgroundRepeat':'no-repeat',
+                    'zIndex': 100000,
+                    'top': '-41px',
+                    'backgroundImage': 'url(' + url + ')'
+                }).addClass('snowRoll');
+            }
+            // 开始飘花
+            setInterval(function() {
+                // 运动的轨迹
+                var startPositionLeft = Math.random() * visualWidth - 100,
+                    startOpacity    = 1,
+                    endPositionTop  = visualHeight - 40,
+                    endPositionLeft = startPositionLeft - 100 + Math.random() * 500,
+                    duration        = visualHeight * 10 + Math.random() * 5000;
+                // 随机透明度，不小于0.5
+                var randomStart = Math.random();
+                randomStart = randomStart < 0.5 ? startOpacity : randomStart;
+                // 创建一个雪花
+                var $flake = createSnowBox();
+                // 设计起点位置
+                $flake.css({
+                    left: startPositionLeft,
+                    opacity : randomStart
+                });
+                // 加入到容器
+                $flakeContainer.append($flake);
+                // 开始执行动画
+                $flake.transition({
+                    top: endPositionTop,
+                    left: endPositionLeft,
+                    opacity: 0.7
+                }, duration, 'ease-out', function() {
+                    $(this).remove() //结束后删除
+                });
+            }, 500);
+        }
+         snowflake()
+    　　　//执行函数
+    })
+	</script>
+</body>
+</html>
